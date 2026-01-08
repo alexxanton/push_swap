@@ -1,21 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   swap.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aanton-a <aanton-a@student.42barcelon      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/08 14:36:26 by aanton-a          #+#    #+#             */
+/*   Updated: 2026/01/08 16:59:28 by aanton-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <../include/push_swap.h>
 
-char	*sa(t_list *a)
+char	*sa(t_list *stack)
 {
-	t_list	*stack;
-	t_list	*next;
-	int		swap;
+	t_list	*swap;
 
-	if (!a)
+	if (!stack && !stack->next)
 		return ("");
-	stack = a;
-	swap = stack->num;
-	if (!stack->next)
-		return ("");
-	next = stack->next;
-	swap = stack->num;
-	stack->num = next->num;
-	next->num = swap;
+	swap = stack;
+	stack->next = swap;
+	stack = stack->next;
 	return ("sa");
 }
 
