@@ -52,7 +52,12 @@ int	main(int argc, char **argv)
 	listi(stack);
 	if (repeated_number(stack))
 		printf("repeated\n");
-	if (is_sorted(stack))
-		printf("sorted\n");
+	while (!is_sorted(stack))
+	{
+		sort(stack);
+		listi(stack);
+		break;
+	}
+	//printf("sorted\n");
 	list_clear(stack);
 }

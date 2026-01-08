@@ -8,7 +8,13 @@ PARSE = src/parse/create_stack.c	\
 		src/parse/list_checks.c		\
 		src/parse/arg_check.c		\
 
-INSTR = src/moves/moves.c
+MOVES = src/moves/push.c	\
+		src/moves/swap.c	\
+		src/moves/rotate.c	\
+		src/moves/reverse.c	\
+
+SORT = src/sort/sort.c
+
 UTILS = src/utils/ft_atoi.c		\
 		src/utils/ft_split.c	\
 		src/utils/ft_substr.c	\
@@ -17,7 +23,7 @@ UTILS = src/utils/ft_atoi.c		\
 		src/utils/list_clear.c	\
 
 HEADERS = include/push_wap.h
-SOURCES = $(SRC) $(INSTR) $(PARSE) $(UTILS)
+SOURCES = $(SRC) $(MOVES) $(PARSE) $(UTILS) $(SORT)
 OBJECTS = $(SOURCES:.c=.o)
 
 $(NAME): $(OBJECTS) Makefile

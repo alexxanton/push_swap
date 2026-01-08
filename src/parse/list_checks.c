@@ -21,7 +21,7 @@ bool	is_sorted(t_list *list)
 	while (list)
 	{
 		next = list->next;
-		printf("%d > %d\n", list->num, next->num);
+		//printf("%d > %d\n", list->num, next->num);
 		if (list->num > next->num)
 			return (false);
 		if (next->next)
