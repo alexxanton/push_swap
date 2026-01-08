@@ -1,28 +1,34 @@
 #include <../include/push_swap.h>
 
-void	sa(t_list *a)
+char	*sa(t_list *a)
 {
 	t_list	*stack;
 	t_list	*next;
 	int		swap;
 
+	if (!a)
+		return ("");
 	stack = a;
 	swap = stack->num;
-	if (stack->next)
-		next = stack->next;
+	if (!stack->next)
+		return ("");
+	next = stack->next;
 	swap = stack->num;
 	stack->num = next->num;
 	next->num = swap;
+	return ("sa");
 }
 
-void	sb(t_list *a, t_list *b)
+char	*sb(t_list *b)
 {
-	sa(a);
-	(void)b;
+	if (sa(b))
+		return ("sb");
+	return ("");
 }
 
-void	ss(t_list *a, t_list *b)
+char	*ss(t_list *a, t_list *b)
 {
-	sa(a);
-	(void)b;
+	if (sa(a) && sa(b))
+		return ("ss");
+	return ("");
 }

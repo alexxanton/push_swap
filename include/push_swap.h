@@ -42,7 +42,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strdup(const char *src);
 void	list_clear(t_list *list);
 
-void	sa(t_list *a);
+char	*sa(t_list *a);
 void	sort(t_list *a);
 
 #endif
