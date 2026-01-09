@@ -6,7 +6,7 @@
 /*   By: aanton-a <aanton-a@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 12:30:48 by aanton-a          #+#    #+#             */
-/*   Updated: 2026/01/08 15:07:03 by aanton-a         ###   ########.fr       */
+/*   Updated: 2026/01/09 12:06:15 by aanton-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strdup(const char *src);
 void	list_clear(t_list *list);
 
-char	*sa(t_list *stack);
-void	sort(t_list *a);
+char	*sa(t_list **a);
+char	*pb(t_list **a, t_list **b);
+char	*pa(t_list **a, t_list **b);
+void	sort(t_list **a);
 
 #endif

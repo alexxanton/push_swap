@@ -6,7 +6,7 @@
 /*   By: aanton-a <aanton-a@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 12:32:05 by aanton-a          #+#    #+#             */
-/*   Updated: 2025/12/19 13:02:37 by aanton-a         ###   ########.fr       */
+/*   Updated: 2026/01/09 11:49:15 by aanton-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,7 @@ int	main(int argc, char **argv)
 	listi(stack);
 	if (repeated_number(stack))
 		printf("repeated\n");
-	while (!is_sorted(stack))
-	{
-		sort(stack);
-		listi(stack);
-		break;
-	}
+	sort(&stack);
 	//printf("sorted\n");
 	list_clear(stack);
 }

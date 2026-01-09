@@ -36,7 +36,7 @@ fs: $(OBJECTS) Makefile
 	$(CC) -c $(CFLAGS) $< -o $@
 
 r: $(NAME)
-	./push_swap "1 2 3"
+	./push_swap "1 3 2"
 
 all: $(NAME) clean
 
