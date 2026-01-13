@@ -6,7 +6,7 @@
 /*   By: aanton-a <aanton-a@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 12:32:05 by aanton-a          #+#    #+#             */
-/*   Updated: 2026/01/09 11:49:15 by aanton-a         ###   ########.fr       */
+/*   Updated: 2026/01/13 15:41:52 by aanton-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	main(int argc, char **argv)
 	}
 	if (!stack)
 		return (stack_error());
-	listi(stack);
+	//listi(stack);
 	if (repeated_number(stack))
 		printf("repeated\n");
 	sort(&stack);

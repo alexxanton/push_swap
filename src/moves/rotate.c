@@ -6,7 +6,7 @@
 /*   By: aanton-a <aanton-a@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 14:36:20 by aanton-a          #+#    #+#             */
-/*   Updated: 2026/01/13 15:26:08 by aanton-a         ###   ########.fr       */
+/*   Updated: 2026/01/13 15:41:11 by aanton-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	rotate(t_list **stack)
 
 	first = *stack;
 	last = *stack;
+	if (!*stack || !(*stack)->next)
+		return ;
 	while (last->next)
 	{
 		last_prev = last;

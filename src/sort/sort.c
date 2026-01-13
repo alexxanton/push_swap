@@ -6,7 +6,7 @@
 /*   By: aanton-a <aanton-a@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 11:26:07 by aanton-a          #+#    #+#             */
-/*   Updated: 2026/01/13 15:21:42 by aanton-a         ###   ########.fr       */
+/*   Updated: 2026/01/13 15:43:02 by aanton-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	stack_print(t_list *list)
 {
+	printf("- -\n");
 	while (list)
 	{
 		printf("%d\n", list->num);
@@ -25,6 +26,7 @@ void	sort(t_list **a)
 {
 	t_list	*b;
 
+	stack_print(*a);
 	while (!is_sorted(*a))
 	{
 		(void)b;
