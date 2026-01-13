@@ -6,7 +6,7 @@
 /*   By: aanton-a <aanton-a@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 11:26:07 by aanton-a          #+#    #+#             */
-/*   Updated: 2026/01/09 12:12:12 by aanton-a         ###   ########.fr       */
+/*   Updated: 2026/01/13 15:21:42 by aanton-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ void	sort(t_list **a)
 
 	while (!is_sorted(*a))
 	{
-		pb(a, &b);
+		(void)b;
+		ra(a);
 		stack_print(*a);
 		break;
 	}
