@@ -6,7 +6,7 @@
 /*   By: aanton-a <aanton-a@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 14:36:20 by aanton-a          #+#    #+#             */
-/*   Updated: 2026/01/13 16:05:12 by aanton-a         ###   ########.fr       */
+/*   Updated: 2026/01/13 17:46:53 by aanton-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,19 +32,19 @@ void	reverse(t_list **stack)
 	*stack = last;
 }
 
-char	*ra(t_list **stack)
+char	*rra(t_list **stack)
 {
 	reverse(stack);
 	return ("rra");
 }
 
-char	*rb(t_list **stack)
+char	*rrb(t_list **stack)
 {
 	reverse(stack);
 	return ("rrb");
 }
 
-char	*rr(t_list **a, t_list **b)
+char	*rrr(t_list **a, t_list **b)
 {
 	reverse(a);
 	reverse(b);
