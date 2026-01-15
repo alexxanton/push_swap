@@ -19,12 +19,17 @@ int	*num_gen(char *str)
 		pool[i] = num++;
 	}
 
+	//for (int i = 0; i < RANGE; i++)
+	//	printf("%d ", pool[i]);
+	//printf("\n");
+	//return NULL;
+
 	for (int i = 0; i < len; i++)
 	{
 		int	index = rand() % (RANGE - i);
 
 		arr[i] = pool[index];
-		pool[index] = pool[RANGE - i];
+		pool[index] = pool[RANGE - i - 1];
 	}
 
 	for (int i = 0; i < len; i++)
@@ -36,7 +41,7 @@ int	main(void)
 {
 	char	*str;
 
-	read(1, str, 10);
-	num_gen(str);
-	//num_gen("100");
+	//read(1, str, 10);
+	//num_gen(str);
+	num_gen("1000");
 }

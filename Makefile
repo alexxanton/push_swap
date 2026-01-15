@@ -32,6 +32,7 @@ $(NAME): $(DEPENDS)
 
 tst: MAIN = src/test.c
 tst: $(NAME)
+#N=$(./test/a.out) && ./push_swap $N
 
 dbg: MAIN = src/debug.c
 dbg: $(NAME)
