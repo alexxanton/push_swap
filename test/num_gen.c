@@ -35,13 +35,17 @@ int	*num_gen(char *str)
 	for (int i = 0; i < len; i++)
 		printf("%d ", arr[i]);
 	printf("\n");
+
+	return arr;
 }
 
 int	main(void)
 {
-	char	*str;
+	char	str[10];
+	int		*arr;
 
-	//read(1, str, 10);
-	//num_gen(str);
-	num_gen("1000");
+	read(1, str, 10);
+	arr = num_gen(str);
+	free(arr);
+	//num_gen("1000");
 }
