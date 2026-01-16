@@ -14,3 +14,4 @@ make
 
 ## Resources
 https://medium.com/@ayogun/push-swap-c1f5d2d41e97
+https://pure-forest.medium.com/push-swap-turk-algorithm-explained-in-6-steps-4c6650a458c0
