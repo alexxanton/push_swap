@@ -1,9 +1,10 @@
 NAME = push_swap
+TEST = tst
 CC = cc
 CFLAGS = -Wall -Werror -Wextra -I./include -g
 RM = rm -f
 MAIN = src/main.c
-TST = test/num_gen.c
+NUMGEN = test/num_gen.c
 
 PARSE = src/parse/create_stack.c	\
 		src/parse/list_checks.c		\
@@ -29,14 +30,14 @@ SOURCES = $(MAIN) $(MOVES) $(PARSE) $(UTILS) $(SORT)
 OBJECTS = $(SOURCES:.c=.o)
 DEPENDS = $(OBJECTS) Makefile
 
-TEST_SRC = $(TST) $(MOVES) $(PARSE) $(UTILS) $(SORT)
+TEST_SRC = $(NUMGEN) $(MOVES) $(PARSE) $(UTILS) $(SORT)
 TEST_OBJ = $(TEST_SRC:.c=.o)
 
 $(NAME): $(DEPENDS)
 	$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME)
 
-tst: $(TEST_OBJ) Makefile
-	$(CC) $(CFLAGS) $(TEST_OBJ) -o $(NAME)
+$(TEST): $(TEST_OBJ) Makefile
+	$(CC) $(CFLAGS) $(TEST_OBJ) -o $(TEST)
 
 fs: $(DEPENDS)
 	$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME) -fsanitize=address
