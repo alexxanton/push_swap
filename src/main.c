@@ -6,7 +6,7 @@
 /*   By: aanton-a <aanton-a@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 12:32:05 by aanton-a          #+#    #+#             */
-/*   Updated: 2026/01/16 16:26:32 by aanton-a         ###   ########.fr       */
+/*   Updated: 2026/01/16 17:05:32 by aanton-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	main(int argc, char **argv)
 		split = ft_split(argv[1], ' ');
 		if (!split.arr)
 			return (stack_error());
-		if (!args_contain_nums(split.arr))
+		if (!validate_args(split.arr, 0))
 		{
 			free_array(split.arr);
 			return (stack_error());
@@ -48,7 +48,7 @@ int	main(int argc, char **argv)
 	}
 	else
 	{
-		if (!args_contain_nums(argv))
+		if (!validate_args(argv, 1))
 			return (stack_error());
 		stack = create_stack(argc, argv, 1);
 	}
