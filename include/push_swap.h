@@ -6,7 +6,7 @@
 /*   By: aanton-a <aanton-a@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 12:30:48 by aanton-a          #+#    #+#             */
-/*   Updated: 2026/01/13 15:03:54 by aanton-a         ###   ########.fr       */
+/*   Updated: 2026/01/16 16:11:21 by aanton-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct s_split
 	char	**arr;
 }	t_split;
 
+void	free_array(char **argv);
 t_list	*create_stack(int argc, char **argv, int start);
 bool	is_sorted(t_list *list);
 bool	repeated_number(t_list *list);

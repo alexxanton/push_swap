@@ -1,40 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_stack.c                                     :+:      :+:    :+:   */
+/*   free_array.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aanton-a <aanton-a@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/16 15:19:30 by aanton-a          #+#    #+#             */
-/*   Updated: 2026/01/16 16:10:19 by aanton-a         ###   ########.fr       */
+/*   Created: 2026/01/16 16:10:38 by aanton-a          #+#    #+#             */
+/*   Updated: 2026/01/16 16:15:52 by aanton-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-t_list	*create_stack(int argc, char **argv, int start)
+void	free_array(char **argv)
 {
-	t_list	*stack;
-	t_list	*next;
-	int		i;
+	int	i;
 
-	stack = malloc(sizeof(t_list));
-	if (!stack)
-		return (NULL);
-	next = stack;
-	i = start;
-	while (i < argc)
+	i = 0;
+	while (argv[i])
 	{
-		next->num = ft_atoi(argv[i]);
-		next->next = NULL;
-		if (i < argc - 1)
-			next->next = malloc(sizeof(t_list));
-		if (!next->next)
-			break ;
-		next = next->next;
+		free(argv[i]);
 		i++;
 	}
-	if (start == 0)
-		free_array(argv);
-	return (stack);
+	free(argv);
 }

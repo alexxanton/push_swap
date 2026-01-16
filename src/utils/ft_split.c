@@ -6,7 +6,7 @@
 /*   By: aanton-a <aanton-a@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 11:40:17 by aanton-a          #+#    #+#             */
-/*   Updated: 2025/12/19 13:09:46 by aanton-a         ###   ########.fr       */
+/*   Updated: 2026/01/16 16:14:22 by aanton-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static int	count_words(char const *s, char c)
 	return (count);
 }
 
-static int	free_array(char **arr)
+static int	free_array_with_err(char **arr)
 {
 	int	i;
 
@@ -68,7 +68,7 @@ static int	allocate_array(char **arr, char const *s, char c)
 		{
 			arr[idx] = ft_substr(s, pos, i - pos + 1);
 			if (!arr[idx])
-				return (free_array(arr));
+				return (free_array_with_err(arr));
 			pos = -1;
 			idx++;
 		}
