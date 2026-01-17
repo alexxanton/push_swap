@@ -23,14 +23,14 @@ bool	validate_args(char **args, int start)
 {
 	int		i;
 	int		j;
-	int		len;
+	//int		len;
 	char	c;
 
 	i = start;
 	while (args[i])
 	{
 		j = 0;
-		len = ft_strlen(args[i]);
+		//len = ft_strlen(args[i]);
 		while (args[i][j])
 		{
 			c = args[i][j];

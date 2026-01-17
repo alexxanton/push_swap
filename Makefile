@@ -1,5 +1,5 @@
 NAME = push_swap
-TEST = tst
+TEST = sandbox
 CC = cc
 CFLAGS = -Wall -Werror -Wextra -I./include -g
 RM = rm -f
@@ -26,34 +26,35 @@ UTILS = src/utils/ft_atoi.c		\
 		src/utils/free_array.c	\
 
 HEADERS = include/push_wap.h
-SOURCES = $(MAIN) $(MOVES) $(PARSE) $(UTILS) $(SORT)
-OBJECTS = $(SOURCES:.c=.o)
-DEPENDS = $(OBJECTS) Makefile
+SOURCES = $(MOVES) $(PARSE) $(UTILS) $(SORT)
+DEPENDS = $(MAIN_OBJ) Makefile
 
-TEST_SRC = $(NUMGEN) $(MOVES) $(PARSE) $(UTILS) $(SORT)
+MAIN_SRC = $(MAIN) $(SOURCES)
+MAIN_OBJ = $(MAIN_SRC:.c=.o)
+TEST_SRC = $(NUMGEN) $(SOURCES)
 TEST_OBJ = $(TEST_SRC:.c=.o)
 
 $(NAME): $(DEPENDS)
-	$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME)
+	$(CC) $(CFLAGS) $(MAIN_OBJ) -o $(NAME)
 
 $(TEST): $(TEST_OBJ) Makefile
 	$(CC) $(CFLAGS) $(TEST_OBJ) -o $(TEST)
 
+tst: $(TEST)
+	./sandbox
+
 fs: $(DEPENDS)
-	$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME) -fsanitize=address
+	$(CC) $(CFLAGS) $(MAIN_OBJ) -o $(NAME) -fsanitize=address
 
 %.o: %.c Makefile $(HEADERS)
 	$(CC) -c $(CFLAGS) $< -o $@
 
-r: $(NAME)
-	./push_swap "1 3 2"
-
 all: $(NAME) clean
 
 clean:
-	$(RM) $(OBJECTS) $(TEST_OBJ)
+	$(RM) $(MAIN_OBJ) $(TEST_OBJ)
 
 fclean: clean
-	$(RM) $(NAME)
+	$(RM) $(NAME) $(TEST)
 
 re: fclean $(NAME)

@@ -27,6 +27,22 @@ void	listi(t_list *list)
 	}
 }
 
+int	solve(t_list *stack)
+{
+	if (!stack)
+		return (stack_error());
+	//listi(stack);
+	if (repeated_number(stack))
+	{
+		printf("repeated\n");
+		return (stack_error());
+	}
+	sort(&stack);
+	//printf("sorted\n");
+	list_clear(stack);
+	return (0);
+}
+
 int	main(int argc, char **argv)
 {
 	t_list	*stack;
@@ -52,12 +68,5 @@ int	main(int argc, char **argv)
 			return (stack_error());
 		stack = create_stack(argc, argv, 1);
 	}
-	if (!stack)
-		return (stack_error());
-	//listi(stack);
-	if (repeated_number(stack))
-		printf("repeated\n");
-	sort(&stack);
-	//printf("sorted\n");
-	list_clear(stack);
+	return (solve(stack));
 }

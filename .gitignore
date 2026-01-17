@@ -1,4 +1,5 @@
 push_swap
+sandbox
 checker*
 *.o
 a.out

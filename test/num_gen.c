@@ -1,60 +1,79 @@
 #include <time.h>
+#include <string.h>
 #include "../include/push_swap.h"
-#define RANGE 2001
 
-t_list	*num_gen(char *str)
+t_list	*num_gen(int range)
 {
-	int		len;
-	int		num;
-	int		pool[RANGE];
+	int		pool_len = range;
+	int		num = 0;
+
+	int		*pool;
 	t_list	*arr;
 	t_list	*next;
 
 	srand(time(NULL));
-	len = atoi(str);
 	arr = malloc(sizeof(t_list));
-	num = -(RANGE - 1) / 2;
-
-	for (int i = 0; i < RANGE; i++)
+	if (range < 0)
 	{
-		pool[i] = num++;
+		num = range;
+		range = -range;
+		pool_len = range;
+		pool_len = pool_len * 2 + 1;
 	}
+	pool = malloc(sizeof(int) * pool_len);
 
-	//for (int i = 0; i < RANGE; i++)
+	for (int i = 0; i < pool_len; i++)
+		pool[i] = num++;
+
+	//for (int i = 0; i < range; i++)
 	//	printf("%d ", pool[i]);
 	//printf("\n");
 	//return NULL;
-
+	
 	next = arr;
-	for (int i = 0; i < len; i++)
+	for (int i = 0; i < range; i++)
 	{
-		int	index = rand() % (RANGE - i);
+		int	index = rand() % (pool_len - i);
 
 		next->next = NULL;
 		next->num = pool[index];
-		pool[index] = pool[RANGE - i - 1];
-		if (i < len - 1)
+		pool[index] = pool[pool_len - i - 1];
+		if (i < range - 1)
 		{
 			next->next = malloc(sizeof(t_list));
 			next = next->next;
 		}
 	}
 
-	//for (int i = 0; i < len; i++)
+	//for (int i = 0; i < range; i++)
 	//	printf("%d ", arr[i]);
 	//printf("\n");
 
+	free(pool);
 	return arr;
 }
 
 int	main(void)
 {
 	char	str[10];
+	char	choice[2];
+	char	*msg = "Enter range: ";
+	char	*mode_msg = "Sandbox mode? (y/N): ";
 	t_list	*arr;
 
+	write(1, msg, strlen(msg));
 	read(1, str, 10);
-	arr = num_gen(str);
-	sort(&arr);
+	write(1, mode_msg, strlen(mode_msg));
+	read(1, choice, 2);
+	choice[1] = 0;
+
+	arr = num_gen(atoi(str));
+	if (strcmp(choice, "y") == 0)
+	{
+	}
+	else
+	{
+		sort(&arr);
+	}
 	free(arr);
-	//num_gen("1000");
 }
