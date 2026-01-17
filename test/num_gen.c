@@ -67,13 +67,15 @@ int	main(void)
 	read(1, choice, 2);
 	choice[1] = 0;
 
-	arr = num_gen(atoi(str));
+	if (strcmp(str, "\n") == 0)
+		arr = num_gen(atoi("10"));
+	else
+		arr = num_gen(atoi(str));
+
 	if (strcmp(choice, "y") == 0)
 	{
 	}
 	else
-	{
 		sort(&arr);
-	}
 	free(arr);
 }

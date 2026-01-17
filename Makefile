@@ -4,7 +4,7 @@ CC = cc
 CFLAGS = -Wall -Werror -Wextra -I./include -g
 RM = rm -f
 MAIN = src/main.c
-NUMGEN = test/num_gen.c
+TEST_FILES = test/num_gen.c test/sandbox.c
 
 PARSE = src/parse/create_stack.c	\
 		src/parse/list_checks.c		\
@@ -31,7 +31,7 @@ DEPENDS = $(MAIN_OBJ) Makefile
 
 MAIN_SRC = $(MAIN) $(SOURCES)
 MAIN_OBJ = $(MAIN_SRC:.c=.o)
-TEST_SRC = $(NUMGEN) $(SOURCES)
+TEST_SRC = $(TEST_FILES) $(SOURCES)
 TEST_OBJ = $(TEST_SRC:.c=.o)
 
 $(NAME): $(DEPENDS)
