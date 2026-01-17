@@ -44,9 +44,19 @@ char	*ft_strdup(const char *src);
 void	list_clear(t_list *list);
 
 char	*sa(t_list **a);
-char	*pb(t_list **a, t_list **b);
+char	*sb(t_list **stack);
+char	*ss(t_list **a, t_list **b);
+
 char	*pa(t_list **a, t_list **b);
+char	*pb(t_list **a, t_list **b);
+
 char	*ra(t_list **stack);
+char	*rb(t_list **stack);
+char	*rr(t_list **a, t_list **b);
+
+char	*rra(t_list **stack);
+char	*rrb(t_list **stack);
+char	*rrr(t_list **a, t_list **b);
 void	sort(t_list **a);
 
 #endif

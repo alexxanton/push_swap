@@ -2,6 +2,8 @@
 #include <string.h>
 #include "../include/push_swap.h"
 
+void	sandbox_sort(t_list **a);
+
 t_list	*num_gen(int range)
 {
 	int		pool_len = range;
@@ -73,8 +75,7 @@ int	main(void)
 		arr = num_gen(atoi(str));
 
 	if (strcmp(choice, "y") == 0)
-	{
-	}
+		sandbox_sort(&arr);
 	else
 		sort(&arr);
 	free(arr);
