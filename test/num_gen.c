@@ -1,8 +1,6 @@
-#include <time.h>
-#include <string.h>
-#include "../include/push_swap.h"
+#include "test.h"
 
-void	sandbox_sort(t_list **a);
+int	stack_len;
 
 t_list	*num_gen(int range)
 {
@@ -13,6 +11,8 @@ t_list	*num_gen(int range)
 	t_list	*arr;
 	t_list	*next;
 
+	stack_len = range > 0 ? range : -range * 2;
+	(void)stack_len;
 	srand(time(NULL));
 	arr = malloc(sizeof(t_list));
 	if (range < 0)
@@ -60,7 +60,7 @@ int	main(void)
 	char	str[10];
 	char	choice[2];
 	char	*msg = "Enter range: ";
-	char	*mode_msg = "Sandbox mode? (y/N): ";
+	char	*mode_msg = "Sandbox mode? (Y/n): ";
 	t_list	*arr;
 
 	write(1, msg, strlen(msg));
@@ -70,13 +70,13 @@ int	main(void)
 	choice[1] = 0;
 
 	if (strcmp(str, "\n") == 0)
-		arr = num_gen(atoi("10"));
+		arr = num_gen(atoi("3"));
 	else
 		arr = num_gen(atoi(str));
 
-	if (strcmp(choice, "y") == 0)
-		sandbox_sort(&arr);
-	else
+	if (strcmp(choice, "n") == 0)
 		sort(&arr);
+	else
+		sandbox_sort(&arr);
 	free(arr);
 }

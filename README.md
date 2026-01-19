@@ -4,7 +4,7 @@
 This project is an introduction to sorting algorithms that aims to teach how to optimize and develop a complex logic using a limited set of instructions.
 
 ## Instructions
-Clone the repository, execute make and execute ./push_swap:
+Clone the repository and execute the following commands:
 ```
 git clone <repository> push_swap
 cd push_swap
