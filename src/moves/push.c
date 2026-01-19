@@ -20,7 +20,7 @@ void	push(t_list **from, t_list **to)
 		return ;
 	stack = *from;
 	*from = (*from)->next;
-	if (!to)
+	if (!to) // TODO: figure out if i have to use (!*to) instead
 	{
 		*to = stack;
 		(*to)->next = NULL;

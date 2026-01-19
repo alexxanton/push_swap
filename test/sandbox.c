@@ -15,7 +15,7 @@ void	print(t_list *a, t_list *b)
 {
 	int	max = 0;
 	print_line();
-	while ((a || a) && ++max)
+	while ((a || b) && ++max)
 	{
 		if (max > 10 && max < stack_len - 10)
 		{
@@ -24,21 +24,26 @@ void	print(t_list *a, t_list *b)
 		}
 		else
 		{
-			printf("|%9d|", a->num);
-			if (b)
-				printf("%9d|\n", a->num);
+			if (a)
+				printf("|%9d|", a->num);
 			else
-				printf("\n");
+				printf("|         |");
+			if (b)
+				printf("%9d|\n", b->num);
+			else
+				printf("         |\n");
 		}
-		a = a->next;
-		//b = b->next;
+		if (a)
+			a = a->next;
+		if (b)
+			b = b->next;
 	}
 	print_line();
 }
 
 void	instructions(t_list **a, t_list **b)
 {
-	char	str[4];
+	char	str[4] = "";
 
 	printf("Stack len: %d\n", stack_len);
 	print(*a, *b);
@@ -50,7 +55,7 @@ void	instructions(t_list **a, t_list **b)
 		else if (strncmp(str, "sb", 2) == 0)
 			sb(b);
 		else if (strncmp(str, "pa", 2) == 0)
-			pa(a, b);
+			pa(b, a);
 		else if (strncmp(str, "pb", 2) == 0)
 			pb(a, b);
 		else if (strncmp(str, "ss", 2) == 0)
@@ -76,7 +81,7 @@ void	instructions(t_list **a, t_list **b)
 
 void	sandbox_sort(t_list **a)
 {
-	t_list	*b;
+	t_list	*b = NULL;
 
 	instructions(a, &b);
 }

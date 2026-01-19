@@ -33,7 +33,7 @@ bool	parse_num(t_list *stack, int argc, char **argv, int start)
 		if (i < argc - 1)
 			next->next = malloc(sizeof(t_list));
 		if (!next->next)
-			return (false);
+			break ; // TODO: return (null) causes memleak
 		next = next->next;
 		i++;
 	}

@@ -57,8 +57,8 @@ t_list	*num_gen(int range)
 
 int	main(void)
 {
-	char	str[10];
-	char	choice[2];
+	char	str[10] = "";
+	char	choice[2] = "";
 	char	*msg = "Enter range: ";
 	char	*mode_msg = "Sandbox mode? (Y/n): ";
 	t_list	*arr;
