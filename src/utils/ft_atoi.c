@@ -17,11 +17,11 @@ int	ft_isdigit(int c)
 	return (c >= '0' && c <= '9');
 }
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
-	int	sign;
-	int	res;
-	int	i;
+	int		sign;
+	int		i;
+	long	res;
 
 	sign = 1;
 	res = 0;
