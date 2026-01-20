@@ -44,12 +44,18 @@ void	print(t_list *a, t_list *b)
 void	instructions(t_list **a, t_list **b)
 {
 	char	str[4] = "";
+	char	last[4] = "";
 
 	printf("Stack len: %d\n", stack_len);
 	print(*a, *b);
-	while (!is_sorted(*a))
+	while ((*a && !is_sorted(*a)) || *b)
 	{
 		read(1, str, 4);
+		str[3] = 0;
+
+		if (strncmp(str, "\n", 1) == 0)
+			strcpy(str, last);
+
 		if (strncmp(str, "sa", 2) == 0)
 			sa(a);
 		else if (strncmp(str, "sb", 2) == 0)
@@ -75,6 +81,7 @@ void	instructions(t_list **a, t_list **b)
 		else if (strncmp(str, "q", 1) == 0)
 			return ;
 
+		strcpy(last, str);
 		print(*a, *b);
 	}
 }

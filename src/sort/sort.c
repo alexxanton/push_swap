@@ -12,29 +12,23 @@
 
 #include <../include/push_swap.h>
 
-void	stack_print(t_list *a, t_list *b)
+void	print_move(char *move)
 {
-	printf("- -\n");
-	while (a)
-	{
-		printf("%d ", a->num);
-		if (b)
-			printf("%d\n ", b->num);
-		a = a->next;
-	}
+	write(1, move, ft_strlen(move));
+	write(1, "\n", 1);
 }
 
 void	sort(t_list **a)
 {
 	t_list	*b = NULL;
+	char	*move;
 
-	printf("%p\n", a);
-	printf("%p\n", &b);
-	stack_print(*a, b);
-	while (!is_sorted(*a))
+	while ((*a && !is_sorted(*a)) || b)
 	{
-		ra(a);
-		stack_print(*a, b);
+		move = ra(a);
+		print_move(move);
+		move = rra(a);
+		print_move(move);
 		break;
 	}
 }

@@ -16,7 +16,7 @@ void	push(t_list **from, t_list **to)
 {
 	t_list	*stack;
 
-	if (!from)
+	if (!*from)
 		return ;
 	stack = *from;
 	*from = (*from)->next;

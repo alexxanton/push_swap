@@ -18,7 +18,7 @@ void	swap(t_list **a)
 	t_list	*stack;
 
 	stack = *a;
-	if (!stack && !stack->next)
+	if (!stack || !stack->next)
 		return ;
 	swap = stack->next;
 	stack->next = swap->next;

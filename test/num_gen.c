@@ -70,7 +70,7 @@ int	main(void)
 	choice[1] = 0;
 
 	if (strcmp(str, "\n") == 0)
-		arr = num_gen(atoi("3"));
+		arr = num_gen(atoi("10"));
 	else
 		arr = num_gen(atoi(str));
 
