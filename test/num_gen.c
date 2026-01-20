@@ -78,5 +78,6 @@ int	main(void)
 		sort(&arr);
 	else
 		sandbox_sort(&arr);
-	free(arr);
+	list_clear(arr);
+	//free(arr);
 }
