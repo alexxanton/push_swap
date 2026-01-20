@@ -12,23 +12,23 @@
 
 #include <../include/push_swap.h>
 
-void	print_move(char *move)
+int	get_next_move(t_list **a, t_list **b)
 {
-	write(1, move, ft_strlen(move));
-	write(1, "\n", 1);
+	sa(a);
+	sb(b);
+	return (1);
 }
 
-void	sort(t_list **a)
+int	sort(t_list **a)
 {
 	t_list	*b = NULL;
-	char	*move;
+	int		count;
 
+	count = 0;
 	while ((*a && !is_sorted(*a)) || b)
 	{
-		move = ra(a);
-		print_move(move);
-		move = rra(a);
-		print_move(move);
+		count += get_next_move(a, &b);
 		break;
 	}
+	return (count);
 }

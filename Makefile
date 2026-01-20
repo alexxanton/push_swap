@@ -10,10 +10,11 @@ PARSE = src/parse/create_stack.c	\
 		src/parse/list_checks.c		\
 		src/parse/arg_check.c		\
 
-MOVES = src/moves/push.c	\
-		src/moves/swap.c	\
-		src/moves/rotate.c	\
-		src/moves/reverse.c	\
+MOVES = src/moves/push.c		\
+		src/moves/swap.c		\
+		src/moves/rotate.c		\
+		src/moves/reverse.c		\
+		src/moves/print_move.c	\
 
 SORT = src/sort/sort.c
 

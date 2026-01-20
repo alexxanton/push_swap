@@ -75,7 +75,7 @@ int	main(void)
 		arr = num_gen(atoi(str));
 
 	if (strcmp(choice, "n") == 0)
-		sort(&arr);
+		printf("%d\n", sort(&arr));
 	else
 		sandbox_sort(&arr);
 	list_clear(arr);

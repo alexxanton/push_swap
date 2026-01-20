@@ -28,21 +28,21 @@ void	rotate(t_list **stack)
 	first->next = NULL;
 }
 
-char	*ra(t_list **stack)
+void	ra(t_list **stack)
 {
 	rotate(stack);
-	return ("ra");
+	print_move("ra");
 }
 
-char	*rb(t_list **stack)
+void	rb(t_list **stack)
 {
 	rotate(stack);
-	return ("rb");
+	print_move("rb");
 }
 
-char	*rr(t_list **a, t_list **b)
+void	rr(t_list **a, t_list **b)
 {
 	rotate(a);
 	rotate(b);
-	return ("rr");
+	print_move("rr");
 }

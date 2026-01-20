@@ -44,20 +44,22 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strdup(const char *src);
 void	list_clear(t_list *list);
 
-char	*sa(t_list **a);
-char	*sb(t_list **stack);
-char	*ss(t_list **a, t_list **b);
+void	sa(t_list **a);
+void	sb(t_list **stack);
+void	ss(t_list **a, t_list **b);
 
-char	*pa(t_list **a, t_list **b);
-char	*pb(t_list **a, t_list **b);
+void	pa(t_list **a, t_list **b);
+void	pb(t_list **a, t_list **b);
 
-char	*ra(t_list **stack);
-char	*rb(t_list **stack);
-char	*rr(t_list **a, t_list **b);
+void	ra(t_list **stack);
+void	rb(t_list **stack);
+void	rr(t_list **a, t_list **b);
 
-char	*rra(t_list **stack);
-char	*rrb(t_list **stack);
-char	*rrr(t_list **a, t_list **b);
-void	sort(t_list **a);
+void	rra(t_list **stack);
+void	rrb(t_list **stack);
+void	rrr(t_list **a, t_list **b);
+
+int		sort(t_list **a);
+void	print_move(char *move);
 
 #endif

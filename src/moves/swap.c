@@ -26,21 +26,21 @@ void	swap(t_list **a)
 	*a = swap;
 }
 
-char	*sa(t_list **a)
+void	sa(t_list **a)
 {
 	swap(a);
-	return ("sa");
+	print_move("sa");
 }
 
-char	*sb(t_list **stack)
+void	sb(t_list **stack)
 {
 	swap(stack);
-	return ("sb");
+	print_move("sb");
 }
 
-char	*ss(t_list **a, t_list **b)
+void	ss(t_list **a, t_list **b)
 {
 	sa(a);
 	sb(b);
-	return ("ss");
+	print_move("ss");
 }
