@@ -23,7 +23,7 @@ UTILS = src/utils/ft_atoi.c		\
 		src/utils/ft_substr.c	\
 		src/utils/ft_strlen.c	\
 		src/utils/ft_strdup.c	\
-		src/utils/list_clear.c	\
+		src/utils/list_utils.c	\
 		src/utils/free_array.c	\
 
 HEADERS = include/push_wap.h

@@ -23,21 +23,21 @@ bool	validate_args(char **args, int start)
 {
 	int		i;
 	int		j;
-	//int		len;
 	char	c;
 
 	i = start;
 	while (args[i])
 	{
 		j = 0;
-		//len = ft_strlen(args[i]);
+		if (ft_strlen(args[i]) > 11)
+			return (false);
 		while (args[i][j])
 		{
 			c = args[i][j];
 			if ((j == 0 && !isnum(c)) && (c == '-' || c == '+'))
 			{
 				if (!isnum(args[i][j + 1]))
-					return false;
+					return (false);
 			}
 			else if (!isnum(c))
 				return (false);
