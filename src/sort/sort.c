@@ -6,7 +6,7 @@
 /*   By: aanton-a <aanton-a@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 11:26:07 by aanton-a          #+#    #+#             */
-/*   Updated: 2026/01/13 15:43:02 by aanton-a         ###   ########.fr       */
+/*   Updated: 2026/01/21 13:30:05 by aanton-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,15 @@ int	get_next_move(t_list **a, t_list **b)
 
 int	sort(t_list **a)
 {
-	t_list	*b = NULL;
+	t_list	*b;
 	int		count;
 
+	b = NULL;
 	count = 0;
 	while ((*a && !is_sorted(*a)) || b)
 	{
 		count += get_next_move(a, &b);
-		break;
+		break ;
 	}
 	return (count);
 }

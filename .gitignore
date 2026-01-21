@@ -1,5 +1,5 @@
 push_swap
-sandbox
+command_mode
 checker*
 *.o
 a.out

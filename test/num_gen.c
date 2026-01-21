@@ -60,7 +60,7 @@ int	main(void)
 	char	str[10] = "";
 	char	choice[2] = "";
 	char	*msg = "Enter range: ";
-	char	*mode_msg = "Sandbox mode? (Y/n): ";
+	char	*mode_msg = "Command mode? (Y/n): ";
 	t_list	*arr;
 
 	write(1, msg, strlen(msg));

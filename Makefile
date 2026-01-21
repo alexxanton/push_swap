@@ -1,5 +1,5 @@
 NAME = push_swap
-TEST = sandbox.o
+TEST = command_mode
 CC = cc
 CFLAGS = -Wall -Werror -Wextra -I./include -g
 RM = rm -f
@@ -42,7 +42,7 @@ $(TEST): $(TEST_OBJ) Makefile
 	$(CC) $(CFLAGS) $(TEST_OBJ) -o $(TEST)
 
 tst: $(TEST)
-	./sandbox.o
+	./command_mode
 
 fs: $(DEPENDS)
 	$(CC) $(CFLAGS) $(MAIN_OBJ) -o $(NAME) -fsanitize=address
