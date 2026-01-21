@@ -34,6 +34,8 @@ static int	count_words(char const *s, char c)
 		}
 		s++;
 	}
+	if (count == 0)
+		count = -1;
 	return (count);
 }
 
@@ -84,7 +86,10 @@ t_split	ft_split(char const *s, char c)
 	char	**arr;
 	t_split	split;
 
-	count = count_words(s, c);
+	if (!*s)
+		count = -1;
+	else
+		count = count_words(s, c);
 	if (count == -1)
 	{
 		split.n = 0;
