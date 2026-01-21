@@ -6,7 +6,7 @@
 /*   By: aanton-a <aanton-a@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 11:59:53 by aanton-a          #+#    #+#             */
-/*   Updated: 2025/12/19 11:47:31 by aanton-a         ###   ########.fr       */
+/*   Updated: 2026/01/21 14:15:44 by aanton-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ bool	is_sorted(t_list *list)
 	while (list)
 	{
 		next = list->next;
-		//printf("%d > %d\n", list->num, next->num);
 		if (list->num > next->num)
 			return (false);
 		if (next->next)

@@ -6,7 +6,7 @@
 /*   By: aanton-a <aanton-a@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 14:36:08 by aanton-a          #+#    #+#             */
-/*   Updated: 2026/01/09 14:32:45 by aanton-a         ###   ########.fr       */
+/*   Updated: 2026/01/21 14:13:42 by aanton-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	push(t_list **from, t_list **to)
 		return ;
 	stack = *from;
 	*from = (*from)->next;
-	if (!to) // TODO: figure out if i have to use (!*to) instead
+	if (!*to)
 	{
 		*to = stack;
 		(*to)->next = NULL;

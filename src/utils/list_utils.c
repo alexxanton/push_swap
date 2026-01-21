@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_clear.c                                       :+:      :+:    :+:   */
+/*   list_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aanton-a <aanton-a@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 12:23:16 by aanton-a          #+#    #+#             */
-/*   Updated: 2025/12/19 12:25:17 by aanton-a         ###   ########.fr       */
+/*   Updated: 2026/01/21 14:12:45 by aanton-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,38 @@ void	list_clear(t_list *list)
 		free(list);
 		list = next;
 	}
+}
+
+int	find_max(t_list *stack)
+{
+	t_list	*next;
+	int		max;
+
+	next = stack;
+	max = next->num;
+	while (stack)
+	{
+		next = stack->next;
+		if (max < next->num)
+			max = next->num;
+		stack = next;
+	}
+	return (max);
+}
+
+int	find_min(t_list *stack)
+{
+	t_list	*next;
+	int		min;
+
+	next = stack;
+	min = next->num;
+	while (stack)
+	{
+		next = stack->next;
+		if (min > next->num)
+			min = next->num;
+		stack = next;
+	}
+	return (min);
 }

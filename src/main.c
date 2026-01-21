@@ -6,7 +6,7 @@
 /*   By: aanton-a <aanton-a@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 12:32:05 by aanton-a          #+#    #+#             */
-/*   Updated: 2026/01/16 17:05:32 by aanton-a         ###   ########.fr       */
+/*   Updated: 2026/01/21 14:16:29 by aanton-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,12 @@ int	solve(t_list *stack)
 {
 	if (!stack)
 		return (stack_error());
-	//listi(stack);
 	if (repeated_number(stack))
 	{
 		printf("repeated\n");
 		return (stack_error());
 	}
 	sort(&stack);
-	//printf("sorted\n");
 	list_clear(stack);
 	return (0);
 }
