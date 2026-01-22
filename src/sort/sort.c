@@ -12,43 +12,34 @@
 
 #include <../include/push_swap.h>
 
-int	sort_three_nums(t_list *stack)
-{
-	int		nums[3];
-	int		i;
-
-	i = 0;
-	while (i < 3)
-	{
-		nums[i] = stack->num;
-		if (stack->next)
-			stack = stack->next;
-		i++;
-	}
-	if (nums[0] > nums[1] && nums[1] < nums[2])
-		ra(&stack);
-	else if (nums[0] > nums[1] && nums[1] > nums[2])
-	{
-		ra(&stack);
-		sa(&stack);
-	}
-	else if (nums[0] < nums[1] && nums[1] > nums[2] && nums[0] < nums[2])
-	{
-		sa(&stack);
-		ra(&stack);
-	}
-	else if (nums[0] < nums[1] && nums[1] > nums[2] && nums[0] > nums[2])
-	{
-		rra(&stack);
-	}
-	return (1);
-}
-
 int	get_next_move(t_list **a, t_list **b)
 {
 	sa(a);
 	sb(b);
 	return (1);
+}
+
+void	rank_nums(t_list *stack)
+{
+	t_list	*ptr;
+	t_list	*next;
+	int		count;
+
+	ptr = stack;
+	while (ptr)
+	{
+		count = 0;
+		next = stack;
+		while (next)
+		{
+			if (next->num < ptr->num)
+				count++;
+			next = next->next;
+		}
+		printf("%d\n", count);
+		ptr->index = count;
+		ptr = ptr->next;
+	}
 }
 
 int	sort(t_list **a)
@@ -58,7 +49,7 @@ int	sort(t_list **a)
 
 	b = NULL;
 	count = 0;
-	return (sort_three_nums(*a));
+	rank_nums(*a);
 	while ((*a && !is_sorted(*a)) || b)
 	{
 		count += get_next_move(a, &b);
