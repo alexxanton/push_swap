@@ -43,6 +43,8 @@ size_t	ft_strlen(const char *str);
 long	ft_atoi(const char *str);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strdup(const char *src);
+
+int		find_max(t_list *stack);
 void	list_clear(t_list *list);
 
 void	sa(t_list **a);

@@ -12,11 +12,53 @@
 
 #include <../include/push_swap.h>
 
+int	rotate_to_max(t_list **stack)
+{
+	int	max;
+	int	count;
+
+	count = 0;
+	max = find_max(*stack);
+	while ((*stack)->index != max)
+	{
+		rb(stack);
+		count++;
+	}
+	return (count);
+}
+
 int	get_next_move(t_list **a, t_list **b)
 {
-	sa(a);
-	sb(b);
-	return (1);
+	int	max;
+	int	count;
+
+	count = 0;
+	max = find_max(*a);
+	while (*a)
+	{
+		if ((*a)->index <= max)
+		{
+			pb(a, b);
+			count++;
+			if ((*b)->index < max / 2)
+			{
+				rb(b);
+				count++;
+			}
+		}
+		else
+		{
+			ra(a);
+			count++;
+		}
+	}
+	while (*b)
+	{
+		count += rotate_to_max(b);
+		pa(b, a);
+		count++;
+	}
+	return (count);
 }
 
 void	rank_nums(t_list *stack)
@@ -36,7 +78,7 @@ void	rank_nums(t_list *stack)
 				count++;
 			next = next->next;
 		}
-		printf("%d\n", count);
+		//printf("%d\n", count);
 		ptr->index = count;
 		ptr = ptr->next;
 	}
@@ -52,8 +94,8 @@ int	sort(t_list **a)
 	rank_nums(*a);
 	while ((*a && !is_sorted(*a)) || b)
 	{
-		count += get_next_move(a, &b);
-		break ;
+		count = get_next_move(a, &b);
+		//break ;
 	}
 	return (count);
 }

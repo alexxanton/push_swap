@@ -26,17 +26,14 @@ void	list_clear(t_list *list)
 
 int	find_max(t_list *stack)
 {
-	t_list	*next;
 	int		max;
 
-	next = stack;
-	max = next->num;
+	max = stack->index;
 	while (stack)
 	{
-		next = stack->next;
-		if (max < next->num)
-			max = next->num;
-		stack = next;
+		if (max < stack->index)
+			max = stack->index;
+		stack = stack->next;
 	}
 	return (max);
 }
