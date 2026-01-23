@@ -25,6 +25,13 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+typedef struct s_chunk
+{
+	int	size;
+	int	max;
+	int	mid;
+}	t_chunk;
+
 typedef struct s_split
 {
 	int		n;
@@ -47,20 +54,20 @@ char	*ft_strdup(const char *src);
 int		find_max(t_list *stack);
 void	list_clear(t_list *list);
 
-void	sa(t_list **a);
-void	sb(t_list **stack);
-void	ss(t_list **a, t_list **b);
+int		sa(t_list **a);
+int		sb(t_list **stack);
+int		ss(t_list **a, t_list **b);
 
-void	pa(t_list **a, t_list **b);
-void	pb(t_list **a, t_list **b);
+int		pa(t_list **a, t_list **b);
+int		pb(t_list **a, t_list **b);
 
-void	ra(t_list **stack);
-void	rb(t_list **stack);
-void	rr(t_list **a, t_list **b);
+int		ra(t_list **stack);
+int		rb(t_list **stack);
+int		rr(t_list **a, t_list **b);
 
-void	rra(t_list **stack);
-void	rrb(t_list **stack);
-void	rrr(t_list **a, t_list **b);
+int		rra(t_list **stack);
+int		rrb(t_list **stack);
+int		rrr(t_list **a, t_list **b);
 
 int		sort(t_list **a);
 void	print_move(char *move);

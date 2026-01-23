@@ -32,14 +32,16 @@ void	push(t_list **from, t_list **to)
 	}
 }
 
-void	pa(t_list **a, t_list **b)
+int	pa(t_list **a, t_list **b)
 {
 	push(a, b);
 	print_move("pa");
+	return (1);
 }
 
-void	pb(t_list **a, t_list **b)
+int	pb(t_list **a, t_list **b)
 {
 	push(a, b);
 	print_move("pb");
+	return (1);
 }

@@ -51,66 +51,47 @@ int rotate_to_max(t_list **stack)
 	pos = position_of(*stack, max);
 	size = stack_size(*stack);
 	count = 0;
-
 	if (pos <= size / 2)
 		while ((*stack)->index != max)
 			rb(stack), count++;
 	else
 		while ((*stack)->index != max)
 			rrb(stack), count++;
-
 	return (count);
 }
 
-int	get_next_move(t_list **a, t_list **b)
+int	get_next_move(t_list **a, t_list **b, t_chunk chunk)
 {
-	//int	max;
-	int	chunk_size;
-	int	chunk_max;
-	int	chunk_mid;
 	int	count;
-
-	int	pushed = 0;
-	int	chunk_pushed = 0;
+	int	pushed;
+	int	chunk_pushed;
 
 	count = 0;
-	//max = find_max(*a);
-	chunk_size = 30;
-	chunk_max = chunk_size - 1;
-	//if (chunk_max > max)
-	//	chunk_max = max;
-	chunk_mid = chunk_max - chunk_size / 2;
+	pushed = 0;
+	chunk_pushed = 0;
 	while (*a)
 	{
-		if ((*a)->index <= chunk_max)
+		if ((*a)->index <= chunk.max)
 		{
-			pb(a, b);
+			count += pb(a, b);
 			pushed++;
 			chunk_pushed++;
-			count++;
-			if ((*b)->index < chunk_mid)
-			{
-				rb(b);
-				count++;
-			}
-			if (chunk_pushed == chunk_size)
+			if ((*b)->index < chunk.mid)
+				count += rb(b);
+			if (chunk_pushed == chunk.size)
 			{
 				chunk_pushed = 0;
-				chunk_max += chunk_size;
-				chunk_mid = chunk_max - chunk_size / 2;
+				chunk.max += chunk.size;
+				chunk.mid = chunk.max - chunk.size / 2;
 			}
 		}
 		else
-		{
-			ra(a);
-			count++;
-		}
+			count += ra(a);
 	}
 	while (*b)
 	{
 		count += rotate_to_max(b);
-		pa(b, a);
-		count++;
+		count += pa(b, a);
 	}
 	return (count);
 }
@@ -132,7 +113,6 @@ void	rank_nums(t_list *stack)
 				count++;
 			next = next->next;
 		}
-		//printf("%d\n", count);
 		ptr->index = count;
 		ptr = ptr->next;
 	}
@@ -141,15 +121,21 @@ void	rank_nums(t_list *stack)
 int	sort(t_list **a)
 {
 	t_list	*b;
+	t_chunk	chunk;
 	int		count;
 
 	b = NULL;
+	//max = find_max(*a);
+	//if (chunk_max > max)
+	//	chunk_max = max;
+	chunk.size = 30;
+	chunk.max = chunk.size - 1;
+	chunk.mid = chunk.max - chunk.size / 2;
 	count = 0;
 	rank_nums(*a);
 	while ((*a && !is_sorted(*a)) || b)
 	{
-		count = get_next_move(a, &b);
-		//break ;
+		count = get_next_move(a, &b, chunk);
 	}
 	return (count);
 }

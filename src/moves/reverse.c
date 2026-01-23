@@ -32,21 +32,24 @@ void	reverse(t_list **stack)
 	*stack = last;
 }
 
-void	rra(t_list **stack)
+int	rra(t_list **stack)
 {
 	reverse(stack);
 	print_move("rra");
+	return (1);
 }
 
-void	rrb(t_list **stack)
+int	rrb(t_list **stack)
 {
 	reverse(stack);
 	print_move("rrb");
+	return (1);
 }
 
-void	rrr(t_list **a, t_list **b)
+int	rrr(t_list **a, t_list **b)
 {
 	reverse(a);
 	reverse(b);
 	print_move("rrr");
+	return (1);
 }
