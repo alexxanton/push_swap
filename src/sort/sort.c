@@ -12,74 +12,59 @@
 
 #include <../include/push_swap.h>
 
-int stack_size(t_list *stack)
+int	stack_size(t_list *stack)
 {
-    int size;
+	int	size;
 
-    size = 0;
-    while (stack)
-    {
-        size++;
-        stack = stack->next;
-    }
-    return (size);
+	size = 0;
+	while (stack)
+	{
+		size++;
+		stack = stack->next;
+	}
+	return (size);
 }
 
-int position_of(t_list *stack, int value)
+int	position_of(t_list *stack, int value)
 {
-    int pos;
+	int	pos;
 
-    pos = 0;
-    while (stack)
-    {
-        if (stack->index == value)
-            return (pos);
-        stack = stack->next;
-        pos++;
-    }
-    return (-1); // should never happen in push_swap
+	pos = 0;
+	while (stack)
+	{
+		if (stack->index == value)
+			return (pos);
+		stack = stack->next;
+		pos++;
+	}
+	return (-1);
 }
 
 int rotate_to_max(t_list **stack)
 {
-    int max;
-    int pos;
-    int size;
-    int count;
+	int	max;
+	int	pos;
+	int	size;
+	int	count;
 
-    max = find_max(*stack);
-    pos = position_of(*stack, max);
-    size = stack_size(*stack);
-    count = 0;
+	max = find_max(*stack);
+	pos = position_of(*stack, max);
+	size = stack_size(*stack);
+	count = 0;
 
-    if (pos <= size / 2)
-        while ((*stack)->index != max)
-            rb(stack), count++;
-    else
-        while ((*stack)->index != max)
-            rrb(stack), count++;
+	if (pos <= size / 2)
+		while ((*stack)->index != max)
+			rb(stack), count++;
+	else
+		while ((*stack)->index != max)
+			rrb(stack), count++;
 
-    return (count);
+	return (count);
 }
-
-//int	rotate_to_max(t_list **stack)
-//{
-//	int	max;
-//	int	count;
-//
-//	count = 0;
-//	max = find_max(*stack);
-//	while ((*stack)->index != max)
-//	{
-//		rb(stack);
-//		count++;
-//	}
-//	return (count);
-//}
 
 int	get_next_move(t_list **a, t_list **b)
 {
-	int	max;
+	//int	max;
 	int	chunk_size;
 	int	chunk_max;
 	int	chunk_mid;
@@ -89,11 +74,11 @@ int	get_next_move(t_list **a, t_list **b)
 	int	chunk_pushed = 0;
 
 	count = 0;
-	max = find_max(*a);
+	//max = find_max(*a);
 	chunk_size = 30;
 	chunk_max = chunk_size - 1;
-	if (chunk_max > max)
-		chunk_max = max;
+	//if (chunk_max > max)
+	//	chunk_max = max;
 	chunk_mid = chunk_max - chunk_size / 2;
 	while (*a)
 	{
