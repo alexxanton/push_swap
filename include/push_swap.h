@@ -6,7 +6,7 @@
 /*   By: aanton-a <aanton-a@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 12:30:48 by aanton-a          #+#    #+#             */
-/*   Updated: 2026/01/16 17:02:38 by aanton-a         ###   ########.fr       */
+/*   Updated: 2026/01/26 12:46:37 by aanton-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef struct s_chunk
 	int	size;
 	int	max;
 	int	mid;
+	int	pushed;
 }	t_chunk;
 
 typedef struct s_split
@@ -71,5 +72,7 @@ int		rrr(t_list **a, t_list **b);
 
 int		sort(t_list **a);
 void	print_move(char *move);
+int	stack_size(t_list *stack);
+int	position_of(t_list *stack, int value);
 
 #endif

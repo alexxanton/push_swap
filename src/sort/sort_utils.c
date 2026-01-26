@@ -1,39 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_utils.c                                       :+:      :+:    :+:   */
+/*   sort_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aanton-a <aanton-a@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/19 12:23:16 by aanton-a          #+#    #+#             */
-/*   Updated: 2026/01/26 12:39:34 by aanton-a         ###   ########.fr       */
+/*   Created: 2026/01/26 12:05:57 by aanton-a          #+#    #+#             */
+/*   Updated: 2026/01/26 12:12:36 by aanton-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
+#include <../include/push_swap.h>
 
-void	list_clear(t_list *list)
+int	stack_size(t_list *stack)
 {
-	t_list	*next;
+	int	size;
 
-	while (list)
-	{
-		next = list->next;
-		free(list);
-		list = next;
-	}
-}
-
-int	find_max(t_list *stack)
-{
-	int		max;
-
-	max = stack->index;
+	size = 0;
 	while (stack)
 	{
-		if (max < stack->index)
-			max = stack->index;
+		size++;
 		stack = stack->next;
 	}
-	return (max);
+	return (size);
+}
+
+int	position_of(t_list *stack, int value)
+{
+	int	pos;
+
+	pos = 0;
+	while (stack)
+	{
+		if (stack->index == value)
+			return (pos);
+		stack = stack->next;
+		pos++;
+	}
+	return (-1);
 }

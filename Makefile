@@ -16,7 +16,8 @@ MOVES = src/moves/push.c		\
 		src/moves/reverse.c		\
 		src/moves/print_move.c	\
 
-SORT = src/sort/sort.c
+SORT = src/sort/sort.c			\
+	   src/sort/sort_utils.c
 
 UTILS = src/utils/ft_atoi.c		\
 		src/utils/ft_split.c	\
