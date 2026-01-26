@@ -6,7 +6,7 @@
 /*   By: aanton-a <aanton-a@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 11:26:07 by aanton-a          #+#    #+#             */
-/*   Updated: 2026/01/26 12:46:04 by aanton-a         ###   ########.fr       */
+/*   Updated: 2026/01/26 14:18:46 by aanton-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,10 @@ int	sort(t_list **a)
 	b = NULL;
 	count = 0;
 	rank_nums(*a);
-	chunk.size = 30;
+	if (stack_size(a) <= 100)
+		chunk.size = 15;
+	else
+		chunk.size = 30;
 	chunk.max = chunk.size - 1;
 	chunk.mid = chunk.max - chunk.size / 2;
 	chunk.pushed = 0;
