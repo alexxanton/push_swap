@@ -27,11 +27,6 @@ t_list	*num_gen(int range)
 	for (int i = 0; i < pool_len; i++)
 		pool[i] = num++;
 
-	//for (int i = 0; i < range; i++)
-	//	printf("%d ", pool[i]);
-	//printf("\n");
-	//return NULL;
-	
 	next = arr;
 	for (int i = 0; i < range; i++)
 	{
@@ -60,7 +55,7 @@ int	main(void)
 	char	str[10] = "";
 	char	choice[2] = "";
 	char	*msg = "Enter range: ";
-	char	*mode_msg = "Command mode? (Y/n): ";
+	char	*mode_msg = "Command mode? (y/N): ";
 	t_list	*arr;
 
 	write(1, msg, strlen(msg));
@@ -74,10 +69,9 @@ int	main(void)
 	else
 		arr = num_gen(atoi(str));
 
-	if (strcmp(choice, "n") == 0)
-		printf("%d\n", sort(&arr));
-	else
+	if (strcmp(choice, "y") == 0)
 		sandbox_sort(&arr);
+	else
+		printf("%d\n", sort(&arr));
 	list_clear(arr);
-	//free(arr);
 }

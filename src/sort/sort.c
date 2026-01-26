@@ -60,7 +60,7 @@ int rotate_to_max(t_list **stack)
 	return (count);
 }
 
-int	get_next_move(t_list **a, t_list **b, t_chunk chunk)
+int	chunk_sort(t_list **a, t_list **b, t_chunk chunk)
 {
 	int	count;
 	int	pushed;
@@ -124,18 +124,18 @@ int	sort(t_list **a)
 	t_chunk	chunk;
 	int		count;
 
-	b = NULL;
 	//max = find_max(*a);
 	//if (chunk_max > max)
 	//	chunk_max = max;
+	b = NULL;
+	count = 0;
+	rank_nums(*a);
 	chunk.size = 30;
 	chunk.max = chunk.size - 1;
 	chunk.mid = chunk.max - chunk.size / 2;
-	count = 0;
-	rank_nums(*a);
 	while ((*a && !is_sorted(*a)) || b)
 	{
-		count = get_next_move(a, &b, chunk);
+		count = chunk_sort(a, &b, chunk);
 	}
 	return (count);
 }
