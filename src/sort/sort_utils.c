@@ -6,7 +6,7 @@
 /*   By: aanton-a <aanton-a@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 12:05:57 by aanton-a          #+#    #+#             */
-/*   Updated: 2026/01/27 16:09:35 by aanton-a         ###   ########.fr       */
+/*   Updated: 2026/01/27 17:31:55 by aanton-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,22 +38,4 @@ int	position_of(t_list *stack, int value)
 		pos++;
 	}
 	return (-1);
-}
-
-int	rotate_to_target(t_list **stack, int target)
-{
-	int	pos;
-	int	size;
-	int	count;
-
-	pos = position_of(*stack, target);
-	size = stack_size(*stack);
-	count = 0;
-	if (pos <= size / 2)
-		while ((*stack)->index != target)
-			count += rb(stack);
-	else
-		while ((*stack)->index != target)
-			count += rrb(stack);
-	return (count);
 }

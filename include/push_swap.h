@@ -6,7 +6,7 @@
 /*   By: aanton-a <aanton-a@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 12:30:48 by aanton-a          #+#    #+#             */
-/*   Updated: 2026/01/27 16:09:45 by aanton-a         ###   ########.fr       */
+/*   Updated: 2026/01/27 17:32:06 by aanton-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,5 @@ void	print_move(char *move);
 int		stack_size(t_list *stack);
 int		position_of(t_list *stack, int value);
 int		sort_small_stack(t_list **a, t_list **b, int len);
-int		rotate_to_target(t_list **stack, int target);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: aanton-a <aanton-a@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 11:26:07 by aanton-a          #+#    #+#             */
-/*   Updated: 2026/01/27 16:08:55 by aanton-a         ###   ########.fr       */
+/*   Updated: 2026/01/27 17:45:24 by aanton-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ int	sort(t_list **a)
 	b = NULL;
 	count = 0;
 	rank_nums(*a);
-	if (len <= 5)
+	if (len > 1 && len <= 5 && !is_sorted(*a))
 	{
 		sort_small_stack(a, &b, len);
 		return (count);

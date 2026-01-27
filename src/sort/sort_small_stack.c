@@ -6,7 +6,7 @@
 /*   By: aanton-a <aanton-a@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 12:55:13 by aanton-a          #+#    #+#             */
-/*   Updated: 2026/01/27 17:14:29 by aanton-a         ###   ########.fr       */
+/*   Updated: 2026/01/27 17:36:57 by aanton-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,24 @@ int	sort_three_nums(t_list **stack)
 	return (hardcoded_moves(stack, nums));
 }
 
+int	rotate_to_target(t_list **stack, int target)
+{
+	int	pos;
+	int	size;
+	int	count;
+
+	pos = position_of(*stack, target);
+	size = stack_size(*stack);
+	count = 0;
+	if (pos <= size / 2)
+		while ((*stack)->index != target)
+			count += ra(stack);
+	else
+		while ((*stack)->index != target)
+			count += rra(stack);
+	return (count);
+}
+
 int	sort_small_stack(t_list **a, t_list **b, int len)
 {
 	if (len == 2)
@@ -68,6 +86,7 @@ int	sort_small_stack(t_list **a, t_list **b, int len)
 	}
 	sort_three_nums(a);
 	pa(b, a);
-	pa(b, a);
+	if (len == 5)
+		pa(b, a);
 	return (0);
 }
