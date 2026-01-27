@@ -42,9 +42,9 @@ t_list	*num_gen(int range)
 		}
 	}
 
-	//for (int i = 0; i < range; i++)
-	//	printf("%d ", arr[i]);
-	//printf("\n");
+	for (t_list *i = arr; i; i = i->next)
+		printf("%d ", i->num);
+	printf("\n");
 
 	free(pool);
 	return arr;

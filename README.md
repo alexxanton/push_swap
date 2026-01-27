@@ -1,8 +1,8 @@
 *This project has been created as part of the 42 curriculum by aanton-a*
 
 ## Description
-This project aims to teach how to develop and optimize a complex logic using a limited set of instructions.
-A sorting algorithm has to be implemented and then it has to be managed meticulosly by the following instructions:
+This project teaches how to develop and optimize a complex logic using a limited set of instructions.
+A sorting algorithm has to be implemented and managed meticulosly with the following instructions:
 
 ## Instructions
 Clone the repository and compile the project:
