@@ -6,7 +6,7 @@
 /*   By: aanton-a <aanton-a@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 11:26:07 by aanton-a          #+#    #+#             */
-/*   Updated: 2026/01/26 14:18:46 by aanton-a         ###   ########.fr       */
+/*   Updated: 2026/01/27 16:08:55 by aanton-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,23 +99,25 @@ int	sort(t_list **a)
 	t_list	*b;
 	t_chunk	chunk;
 	int		count;
+	int		len;
 
-	//max = find_max(*a);
-	//if (chunk_max > max)
-	//	chunk_max = max;
+	len = stack_size(*a);
 	b = NULL;
 	count = 0;
 	rank_nums(*a);
-	if (stack_size(a) <= 100)
+	if (len <= 5)
+	{
+		sort_small_stack(a, &b, len);
+		return (count);
+	}
+	if (len <= 100)
 		chunk.size = 15;
 	else
 		chunk.size = 30;
-	chunk.max = chunk.size - 1;
+	chunk.max = chunk.size;
 	chunk.mid = chunk.max - chunk.size / 2;
 	chunk.pushed = 0;
 	if (!is_sorted(*a))
-	{
 		count = chunk_sort(a, &b, chunk);
-	}
 	return (count);
 }
