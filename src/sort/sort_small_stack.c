@@ -6,7 +6,7 @@
 /*   By: aanton-a <aanton-a@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 12:55:13 by aanton-a          #+#    #+#             */
-/*   Updated: 2026/01/27 18:02:56 by aanton-a         ###   ########.fr       */
+/*   Updated: 2026/01/27 18:23:34 by aanton-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,20 +73,24 @@ int	rotate_to_target(t_list **stack, int target)
 
 int	sort_small_stack(t_list **a, t_list **b, int len)
 {
+	int	count;
+
+	count = 0;
 	if (len == 2)
 		return (sa(a));
 	if (len == 3)
 		return (sort_three_nums(a));
-	rotate_to_target(a, 0);
+	count += rotate_to_target(a, 0);
 	pb(a, b);
 	if (len == 5)
 	{
-		rotate_to_target(a, 1);
+		count += rotate_to_target(a, 1);
 		pb(a, b);
+		count += 2;
 	}
-	sort_three_nums(a);
+	count += sort_three_nums(a);
 	pa(b, a);
 	if (len == 5)
 		pa(b, a);
-	return (0);
+	return (count + 2);
 }
