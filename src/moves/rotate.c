@@ -6,11 +6,11 @@
 /*   By: aanton-a <aanton-a@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 14:36:20 by aanton-a          #+#    #+#             */
-/*   Updated: 2026/01/13 18:32:12 by aanton-a         ###   ########.fr       */
+/*   Updated: 2026/01/27 18:07:05 by aanton-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <../include/push_swap.h>
+#include "../include/push_swap.h"
 
 void	rotate(t_list **stack)
 {

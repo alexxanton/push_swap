@@ -6,11 +6,11 @@
 /*   By: aanton-a <aanton-a@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 11:26:07 by aanton-a          #+#    #+#             */
-/*   Updated: 2026/01/27 17:45:24 by aanton-a         ###   ########.fr       */
+/*   Updated: 2026/01/27 18:05:43 by aanton-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <../include/push_swap.h>
+#include "../include/push_swap.h"
 
 void	rank_nums(t_list *stack)
 {

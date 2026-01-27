@@ -6,7 +6,7 @@
 /*   By: aanton-a <aanton-a@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 12:32:05 by aanton-a          #+#    #+#             */
-/*   Updated: 2026/01/27 17:35:30 by aanton-a         ###   ########.fr       */
+/*   Updated: 2026/01/27 17:53:45 by aanton-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,6 @@ int	stack_error(void)
 {
 	write(2, "Error\n", 6);
 	return (1);
-}
-
-void	listi(t_list *list)
-{
-	while (list)
-	{
-		printf("%d\n", list->num);
-		list = list->next;
-	}
 }
 
 int	solve(t_list *stack)

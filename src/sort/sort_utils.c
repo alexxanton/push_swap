@@ -6,11 +6,11 @@
 /*   By: aanton-a <aanton-a@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 12:05:57 by aanton-a          #+#    #+#             */
-/*   Updated: 2026/01/27 17:31:55 by aanton-a         ###   ########.fr       */
+/*   Updated: 2026/01/27 18:05:59 by aanton-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <../include/push_swap.h>
+#include "../include/push_swap.h"
 
 int	stack_size(t_list *stack)
 {

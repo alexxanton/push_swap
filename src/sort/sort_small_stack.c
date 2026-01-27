@@ -6,7 +6,7 @@
 /*   By: aanton-a <aanton-a@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 12:55:13 by aanton-a          #+#    #+#             */
-/*   Updated: 2026/01/27 17:36:57 by aanton-a         ###   ########.fr       */
+/*   Updated: 2026/01/27 18:02:56 by aanton-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ int	hardcoded_moves(t_list **stack, int nums[3])
 		sa(stack);
 		return (2);
 	}
+	else if (nums[0] < nums[1] && nums[1] > nums[2] && nums[0] > nums[2])
+		rra(stack);
 	else if (nums[0] < nums[1] && nums[1] > nums[2] && nums[0] < nums[2])
 	{
 		sa(stack);
 		ra(stack);
 		return (2);
 	}
-	else if (nums[0] < nums[1] && nums[1] > nums[2] && nums[0] > nums[2])
-		rra(stack);
 	else if (nums[0] > nums[1] && nums[1] < nums[2] && nums[0] > nums[2])
 		ra(stack);
 	else if (nums[0] > nums[1] && nums[1] < nums[2] && nums[0] < nums[2])

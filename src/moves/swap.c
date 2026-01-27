@@ -6,11 +6,11 @@
 /*   By: aanton-a <aanton-a@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 14:36:26 by aanton-a          #+#    #+#             */
-/*   Updated: 2026/01/13 15:33:34 by aanton-a         ###   ########.fr       */
+/*   Updated: 2026/01/27 18:07:10 by aanton-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <../include/push_swap.h>
+#include "../include/push_swap.h"
 
 void	swap(t_list **a)
 {
