@@ -39,22 +39,22 @@ typedef struct s_split
 	char	**arr;
 }	t_split;
 
+// Parse
 void	free_array(char **argv);
-t_list	*create_stack(int argc, char **argv, int start);
 bool	is_sorted(t_list *list);
 bool	repeated_number(t_list *list);
 bool	validate_args(char **args, int start);
+t_list	*create_stack(int argc, char **argv, int start);
 
 // Utils
-t_split	ft_split(char const *s, char c);
-size_t	ft_strlen(const char *str);
 long	ft_atoi(const char *str);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strdup(const char *src);
-
-int		find_max(t_list *stack);
 void	list_clear(t_list *list);
+size_t	ft_strlen(const char *str);
+t_split	ft_split(char const *s, char c);
 
+// Moves
 int		sa(t_list **a);
 int		sb(t_list **stack);
 int		ss(t_list **a, t_list **b);
@@ -70,10 +70,12 @@ int		rra(t_list **stack);
 int		rrb(t_list **stack);
 int		rrr(t_list **a, t_list **b);
 
+// Sort
 int		sort(t_list **a);
-void	print_move(char *move);
 int		stack_size(t_list *stack);
 int		position_of(t_list *stack, int value);
 int		sort_small_stack(t_list **a, t_list **b, int len);
+void	print_move(char *move);
+int		find_max(t_list *stack);
 
 #endif
