@@ -10,25 +10,25 @@ PARSE = src/parse/create_stack.c	\
 		src/parse/list_checks.c		\
 		src/parse/arg_check.c		\
 
-MOVES = src/moves/push.c		\
-		src/moves/swap.c		\
-		src/moves/rotate.c		\
-		src/moves/reverse.c		\
-		src/moves/print_move.c	\
+MOVES = src/moves/push.c			\
+		src/moves/swap.c			\
+		src/moves/rotate.c			\
+		src/moves/reverse.c			\
+		src/moves/print_move.c		\
 
 SORT = src/sort/sort.c				\
 	   src/sort/sort_utils.c		\
 	   src/sort/sort_small_stack.c	\
 
-UTILS = src/utils/ft_atoi.c		\
-		src/utils/ft_split.c	\
-		src/utils/ft_substr.c	\
-		src/utils/ft_strlen.c	\
-		src/utils/ft_strdup.c	\
-		src/utils/list_utils.c	\
-		src/utils/free_array.c	\
+UTILS = src/utils/ft_atoi.c			\
+		src/utils/ft_split.c		\
+		src/utils/ft_substr.c		\
+		src/utils/ft_strlen.c		\
+		src/utils/ft_strdup.c		\
+		src/utils/list_utils.c		\
+		src/utils/free_array.c		\
 
-HEADERS = include/push_wap.h
+HEADERS = include/push_swap.h
 SOURCES = $(MOVES) $(PARSE) $(UTILS) $(SORT)
 DEPENDS = $(MAIN_OBJ) Makefile
 
